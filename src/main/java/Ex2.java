@@ -33,17 +33,13 @@ public class Ex2 {
         int depth = 0;
         int aim = 0;
         for(Command c : commands){
-            switch (c.command){
-                case "forward":
-                    horizontal+=c.length;
-                    depth+=aim*c.length;
-                    break;
-                case "down":
-                    aim+=c.length;
-                    break;
-                case "up":
-                    aim-=c.length;
-                    break;
+            switch (c.command) {
+                case "forward" -> {
+                    horizontal += c.length;
+                    depth += aim * c.length;
+                }
+                case "down" -> aim += c.length;
+                case "up" -> aim -= c.length;
             }
         }
         System.out.println("Output part 2: " + horizontal * depth);
